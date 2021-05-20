@@ -121,7 +121,7 @@ ListaDashboards.getInitialProps = async (ctx: NextPageContext) => {
     if (process.env.NODE_ENV === "development")
         BASE_URL = 'http://localhost:3000/api/dashboards';
     else
-       BASE_URL = 'http://iotmonitor.vercel.app/api/dashboards';
+       BASE_URL = 'https://iotmonitor.vercel.app/api/dashboards';
 
     const resp = await fetch(BASE_URL);
 

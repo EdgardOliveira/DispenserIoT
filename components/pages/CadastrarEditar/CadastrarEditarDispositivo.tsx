@@ -5,24 +5,21 @@ import {
     IconButton,
     InputLabel,
     makeStyles,
-    MenuItem,
     Paper,
-    Select,
     TextField,
     Theme,
     Typography,
-    FormControl,
 } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import { useFormik } from 'formik';
+import {useFormik} from 'formik';
 import Link from 'next/link';
-import Router, { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import Router, {useRouter} from 'next/router';
+import {useEffect, useState} from 'react';
 import * as Yup from 'yup';
 import LayoutWithMenu from '../../layout/LayoutWithMenu/LayoutWithMenu';
 import FormLoadingComponent from '../../screen/FormLoading/FormLoading';
-import { SnackbarProvider, VariantType, useSnackbar } from 'notistack';
-import { atualizarDados, obterDadosId, postarDados } from '../../../lib/RESTClient';
+import {SnackbarProvider, useSnackbar, VariantType} from 'notistack';
+import {atualizarDados, obterDadosId, postarDados} from '../../../lib/RESTClient';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -161,7 +158,7 @@ export function Dispositivo() {
         <LayoutWithMenu>
             <Container>
                 <div className={classes.toolbar}>
-                    <Link href='/redes' passHref>
+                    <Link href='/dispositivos' passHref>
                         <IconButton aria-label='Voltar'>
                             <ArrowBackIcon />
                         </IconButton>
@@ -205,23 +202,6 @@ export function Dispositivo() {
                             helperText={formik.touched.localidade && formik.errors.localidade}
                         />
                         <InputLabel htmlFor='outlined-age-native-simple'>Status</InputLabel>
-                        {/*<Select*/}
-                        {/*    native*/}
-                        {/*    variant='outlined'*/}
-                        {/*    fullWidth*/}
-                        {/*    value={formik.values.status}*/}
-                        {/*    onChange={formik.handleChange}*/}
-                        {/*    error={formik.touched.status && Boolean(formik.errors.status)}*/}
-                        {/*    label='Status'*/}
-                        {/*    inputProps={{*/}
-                        {/*        name: 'status',*/}
-                        {/*        id: 'outlined-age-native-simple',*/}
-                        {/*    }}*/}
-                        {/*>*/}
-                        {/*    <option aria-label='None' value='' />*/}
-                        {/*    <option value={'Permitido'}>Permitido</option>*/}
-                        {/*    <option value={'Bloqueado'}>Bloqueado</option>*/}
-                        {/*</Select>*/}
 
                         <Button
                             className={classes.submit}

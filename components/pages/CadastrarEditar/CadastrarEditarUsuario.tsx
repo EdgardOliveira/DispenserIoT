@@ -3,26 +3,22 @@ import {
   Container,
   createStyles,
   IconButton,
-  InputLabel,
   makeStyles,
-  MenuItem,
   Paper,
-  Select,
   TextField,
   Theme,
   Typography,
-  FormControl,
 } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import { useFormik } from 'formik';
+import {useFormik} from 'formik';
 import Link from 'next/link';
-import Router, { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import Router, {useRouter} from 'next/router';
+import React, {useEffect, useState} from 'react';
 import * as Yup from 'yup';
 import LayoutWithMenu from '../../layout/LayoutWithMenu/LayoutWithMenu';
 import FormLoadingComponent from '../../screen/FormLoading/FormLoading';
-import { SnackbarProvider, VariantType, useSnackbar } from 'notistack';
-import { atualizarDados, obterDadosId, postarDados } from '../../../lib/RESTClient';
+import {SnackbarProvider, useSnackbar, VariantType} from 'notistack';
+import {atualizarDados, obterDadosId, postarDados} from '../../../lib/RESTClient';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import PersonIcon from '@material-ui/icons/Person';
 import MailIcon from '@material-ui/icons/Mail';
