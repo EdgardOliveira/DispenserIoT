@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Usuario {
+  id            Int      @id @default(autoincrement())
+  primeiroNome  String
+  ultimoNome    String
+  email         String   @unique
+  senha         String
+  @@map(name: "usuarios")
+}
+
+model Dispositivo {
+  id            Int      @id @default(autoincrement())
+  dispositivo   String
+  localidade    String
+  dashboard     Dashboard[]
+  @@map(name: "dispositivos")
+}
+
+model Dashboard {
+  id            Int      @id @default(autoincrement())
+  dataHora      DateTime @default(now())
+  wifi          Float
+  voltagem      Float
+  nivel         Float
+  dispositivo   Dispositivo @relation(fields: [dispositivoId], references: [id])
+  dispositivoId Int
+  @@map(name: "dashboards")
+}
