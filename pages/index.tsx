@@ -11,7 +11,7 @@ export default function Index() {
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Bem-vindo ao projeto <a href="https://dispenseriot.vercel.app">Dispenser IoT!</a>
+                    Bem-vindo ao projeto <a href="https://iotmonitor.vercel.app">Dispenser IoT!</a>
                 </h1>
 
                 <div className={styles.grid}>
