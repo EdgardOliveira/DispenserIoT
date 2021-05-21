@@ -3,14 +3,15 @@ import { NextPageContext } from "next";
 import Router from 'next/router';
 
 let cookie;
+const confHeaders = new Headers();
+confHeaders.append("Content-Type", "application/json");
+confHeaders.append("cookie", cookie!);
 
 export async function getCookies(url: string, ctx: NextPageContext) {
   cookie = ctx.req?.headers.cookie;
 
   const resp = await fetch(url, {
-    headers: {
-      cookie: cookie!
-    }
+    headers: confHeaders
   });
 
   if(resp.status === 401 && !ctx.req) {
@@ -33,9 +34,7 @@ export async function getCookies(url: string, ctx: NextPageContext) {
 export async function obterDadosId(url:string) {
   const res = await fetch(url, {
     method: 'GET',
-    headers: {
-      cookie: cookie!
-    },
+    headers: confHeaders,
     credentials: 'same-origin',
   })
   const json = await res.json();
@@ -45,9 +44,7 @@ export async function obterDadosId(url:string) {
 export async function postarDados(url:string, corpo) {
   const res = await fetch(url, {
     method: 'POST',
-    headers: {
-      cookie: cookie!
-    },
+    headers: confHeaders,
     credentials: 'same-origin',
     body: JSON.stringify(corpo),
   })
@@ -58,9 +55,7 @@ export async function postarDados(url:string, corpo) {
 export async function atualizarDados(url:string, corpo) {
   const res = await fetch(url, {
     method: 'PUT',
-    headers: {
-      cookie: cookie!
-    },
+    headers: confHeaders,
     credentials: 'same-origin',
     body: JSON.stringify(corpo),
   })
@@ -71,9 +66,7 @@ export async function atualizarDados(url:string, corpo) {
 export async function excluirDados(url:string, id:number){
     const res = await fetch(url, {
       method: 'DELETE',
-      headers: {
-        cookie: cookie!
-      },
+      headers: confHeaders,
       credentials: 'same-origin',
       body: JSON.stringify({
         id: id

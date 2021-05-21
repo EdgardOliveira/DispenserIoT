@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         form: {
             padding: theme.spacing(4),
-            maxWidth: '500px',
+            maxWidth: '370px',
         },
         submit: {
             marginTop: theme.spacing(2),
@@ -288,7 +288,7 @@ export function CreateAccountPage() {
             </Paper>
             <div>
                 <Typography className={classes.sloganTitle} variant='h3' component='h1'>
-                    Dispenser IoT
+                    IoT Monitor
                 </Typography>
                 <Typography variant='h4' component='h2'>
                     Registre-se!

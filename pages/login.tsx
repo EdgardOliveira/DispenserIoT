@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     form: {
       padding: theme.spacing(4),
-      maxWidth: '500px',
+      maxWidth: '370px',
     },
     submit: {
       marginTop: theme.spacing(2),
@@ -80,7 +80,6 @@ export function LoginPage() {
   });
 
   async function handleResponse(variant: VariantType, mensagem: String) {
-    // variant could be success, error, warning, info, or default
     enqueueSnackbar(mensagem, { variant });
   }
 

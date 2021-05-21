@@ -17,6 +17,7 @@ import fetch from "isomorphic-unfetch";
 import {red} from '@material-ui/core/colors';
 import Grid from '@material-ui/core/Grid';
 import Dispenser from "../../components/screen/Dispenser/Dispenser";
+import {getCookies} from "../../lib/RESTClient";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -116,6 +117,7 @@ ListaDashboards.getInitialProps = async (ctx: NextPageContext) => {
     //     url = `${process.env.BASE_URL}/api/dashboards`;
     //
     // const res = await getCookies(url, ctx);
+
     let BASE_URL;
     if (process.env.NODE_ENV === "development")
         BASE_URL = 'http://localhost:3000/api/dashboards';

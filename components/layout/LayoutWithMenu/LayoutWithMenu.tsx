@@ -121,7 +121,7 @@ export default function LayoutWithMenuComponent({ children }) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Dispenser IoT
+            IoT Monitor
           </Typography>
         </Toolbar>
       </AppBar>

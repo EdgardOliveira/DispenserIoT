@@ -15,7 +15,7 @@ export default function Index() {
                 </h1>
 
                 <div className={styles.grid}>
-                    <a href="/sobre" className={styles.card}>
+                    <a href="https://github.com/EdgardOliveira/DispenserIoT" className={styles.card}>
                         <h3>Documentação &rarr;</h3>
                         <p>Veja aqui, como o projeto foi concebido para funcionamento.</p>
                     </a>

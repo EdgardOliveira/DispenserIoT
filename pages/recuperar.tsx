@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     form: {
       padding: theme.spacing(4),
-      maxWidth: '500px',
+      maxWidth: '370px',
     },
     submit: {
       marginTop: theme.spacing(2),
