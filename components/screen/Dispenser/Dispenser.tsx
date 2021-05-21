@@ -15,16 +15,19 @@ interface IDispenserProps {
 
 export default function Dispenser(props: IDispenserProps) {
     // const {id, dataHora, dispositivo, nivel, wifi, voltagem, localidade} = props;
-    const {nivel} = props;
+    let {nivel} = props;
+
+    if (nivel < 0 || nivel > 100) nivel = -99;
 
     //Paleta de Cores de estatus
-    const verde = '#53c222';
-    const amarelo = '#d9d002';
-    const laranja = '#dc8602';
-    const vermelho = '#ff0000';
+    const preto     = '#000000';
+    const verde     = '#53c222';
+    const amarelo   = '#d9d002';
+    const laranja   = '#dc8602';
+    const vermelho  = '#ff0000';
 
     //verificando a cor do nivel
-    let fillColor;
+    let fillColor = verde;
     switch (true) {
         case (nivel >= 0 && nivel <= 15):
             fillColor = vermelho;
@@ -38,6 +41,7 @@ export default function Dispenser(props: IDispenserProps) {
         case (nivel >= 41 && nivel <= 100):
             fillColor = verde;
             break;
+        default: fillColor = preto;
     }
 
     const radius = 60;  //tamanho do círculo

@@ -17,7 +17,6 @@ import fetch from "isomorphic-unfetch";
 import {red} from '@material-ui/core/colors';
 import Grid from '@material-ui/core/Grid';
 import Dispenser from "../../components/screen/Dispenser/Dispenser";
-import prisma from "../../lib/prisma";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -117,13 +116,11 @@ ListaDashboards.getInitialProps = async (ctx: NextPageContext) => {
     //     url = `${process.env.BASE_URL}/api/dashboards`;
     //
     // const res = await getCookies(url, ctx);
-    // let BASE_URL;
-    // if (process.env.NODE_ENV === "development")
-    //     BASE_URL = 'http://localhost:3000/api/dashboards';
-    // else
-    //    BASE_URL = 'https://iotmonitor.vercel.app/api/dashboards';
-
-    const resp = await fetch('/api/dashboards');
+    let BASE_URL;
+    if (process.env.NODE_ENV === "development")
+        BASE_URL = 'http://localhost:3000/api/dashboards';
+    else
+       BASE_URL = 'https://iotmonitor.vercel.app/api/dashboards';
 
     const res = await resp.json();
     const json: Dashboard[] = res.dashboards;
