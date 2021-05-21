@@ -122,6 +122,8 @@ ListaDashboards.getInitialProps = async (ctx: NextPageContext) => {
     else
        BASE_URL = 'https://iotmonitor.vercel.app/api/dashboards';
 
+    const resp = await fetch(BASE_URL);
+
     const res = await resp.json();
     const json: Dashboard[] = res.dashboards;
     return {
