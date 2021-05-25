@@ -201,7 +201,6 @@ export function Dispositivo() {
                             error={formik.touched.localidade && Boolean(formik.errors.localidade)}
                             helperText={formik.touched.localidade && formik.errors.localidade}
                         />
-                        <InputLabel htmlFor='outlined-age-native-simple'>Status</InputLabel>
 
                         <Button
                             className={classes.submit}
