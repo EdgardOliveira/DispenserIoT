@@ -9,17 +9,17 @@ import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import HomeIcon from '@material-ui/icons/Home';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { createStyles, makeStyles, Theme, useTheme } from '@material-ui/core/styles';
+import {createStyles, makeStyles, Theme, useTheme} from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuIcon from '@material-ui/icons/Menu';
-import PeopleIcon from '@material-ui/icons/People';
 import clsx from 'clsx';
-import { ReactNode, useState } from 'react';
+import {ReactNode, useState} from 'react';
 import Link from 'next/link';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>

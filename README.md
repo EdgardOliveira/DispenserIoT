@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/static/v1?label=TypeScript&message=Linguagem&color=yellow&style=for-the-badge&logo=TypeScript"/>
   <img src="https://img.shields.io/static/v1?label=JasonWebToken&message=API&color=red&style=for-the-badge&logo=JWT"/>
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
-   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
 
 
@@ -58,8 +58,9 @@ https://iotmonitor.vercel.app
 <img src="https://github.com/EdgardOliveira/DispenserIoT/blob/main/public/imagens/inicial.png" alt="inicial"  height="600" width="800">
 <img src="https://github.com/EdgardOliveira/DispenserIoT/blob/main/public/imagens/registro.png" alt="registro"  height="600" width="300">
 <img src="https://github.com/EdgardOliveira/DispenserIoT/blob/main/public/imagens/login.png" alt="login"  height="600" width="300">
-<img src="https://github.com/EdgardOliveira/DispenserIoT/blob/main/public/imagens/dashboard.png" alt="dashboard"  height="600" width="300">
+<img src="https://github.com/EdgardOliveira/DispenserIoT/blob/main/public/imagens/dashboards.png" alt="dashboards"  height="600" width="300">
 <img src="https://github.com/EdgardOliveira/DispenserIoT/blob/main/public/imagens/dispositivos.png" alt="dispositivos"  height="600" width="800">
+<img src="https://github.com/EdgardOliveira/DispenserIoT/blob/main/public/imagens/cadastrar.png" alt="cadastrar"  height="600" width="800">
 <img src="https://github.com/EdgardOliveira/DispenserIoT/blob/main/public/imagens/editar.png" alt="alterar"  height="600" width="800">
 
 ## Pré-requisitos
@@ -79,6 +80,7 @@ https://iotmonitor.vercel.app
 | POST      | /api/dispositivos       | dispositivos     | Cadastar um dispositivo                        | api        |
 | PUT       | /api/dispositivos       | dispositivos     | Atualizar dados de um dispositivo cadastrado   | api        |
 | DELETE    | /api/dispositivos       | dispositivos     | Excluir o registro de um dispositivo cadastrado| api        |
+| GET       | /api/dashboards         | dashboards       | Listar todos os status de dispositivos         | api        |
 
 
 ## Tarefas em aberto

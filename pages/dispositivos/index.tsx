@@ -186,24 +186,8 @@ export default function ListaDispositivos({dispositivos} : any) {
 }
 
 ListaDispositivos.getInitialProps = async (ctx: NextPageContext) => {
-
-    // let url;
-    // if(!process.env.BASE_URL)
-    //     url = '/api/dispositivos';
-    // else
-    //     url = `${process.env.BASE_URL}/api/dispositivos`;
-    //
-    // const res = await getCookies(url, ctx);
-
-    // let BASE_URL;
-    // if (process.env.NODE_ENV === "development")
-    //     BASE_URL = `http://localhost:3000/api/dispositivos`;
-    // else
-    //     BASE_URL = 'https://iotmonitor.vercel.app/api/dispositivos';
-
-    const BASE_URL = `${process.env.BASE_URL}/api/dispositivos`;
-
-    const resp = await fetch(BASE_URL);
+    let url = !process.env.BASE_URL ? '/api/dispositivos' : `${process.env.BASE_URL}/api/dispositivos`;
+    const resp = await fetch(url);
     const res = await resp.json();
     const json:Dispositivo[] = res.dispositivos;
 

@@ -16,6 +16,7 @@ import * as Yup from 'yup';
 import CopyrightComponent from '../components/screen/Copyright/Copyright';
 import FormLoadingComponent from '../components/screen/FormLoading/FormLoading';
 import { SnackbarProvider, VariantType, useSnackbar } from 'notistack';
+import Router from "next/router";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -122,6 +123,7 @@ export function CreateAccountPage() {
         if (resposta.sucesso === true) {
             handleResponse('success', `Usuário: ${resposta.usuario.primeiroNome} ${resposta.usuario.ultimoNome} cadastrado(a) com sucesso!`);
             console.log('sucesso!');
+            await Router.push('/dashboards');
         } else {
             handleResponse('error', 'Erro: ' + resposta.mensagem);
             console.log('erro!');

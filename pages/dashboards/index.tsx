@@ -109,23 +109,8 @@ export default function ListaDashboards({dashboards}: any) {
 }
 
 ListaDashboards.getInitialProps = async (ctx: NextPageContext) => {
-
-    // let url;
-    // if (!process.env.BASE_URL)
-    //     url = '/api/dashboards';
-    // else
-    //     url = `${process.env.BASE_URL}/api/dashboards`;
-    //
-    // const res = await getCookies(url, ctx);
-
-    let BASE_URL;
-    if (process.env.NODE_ENV === "development")
-        BASE_URL = 'http://localhost:3000/api/dashboards';
-    else
-       BASE_URL = 'https://iotmonitor.vercel.app/api/dashboards';
-
-    const resp = await fetch(BASE_URL);
-
+    let url = !process.env.BASE_URL ? '/api/dashboards' : `${process.env.BASE_URL}/api/dashboards`;
+    const resp = await fetch(url);
     const res = await resp.json();
     const json: Dashboard[] = res.dashboards;
     return {
