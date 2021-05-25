@@ -28,6 +28,9 @@ export async function recuperarTodos(req: NextApiRequest, res: NextApiResponse) 
             distinct: ['dispositivoId'],
             orderBy:{
                 dataHora: 'desc'
+            },
+            include:{
+                dispositivo: true
             }
         });
         console.log(JSON.stringify(resultado));
