@@ -17,7 +17,6 @@ import fetch from "isomorphic-unfetch";
 import {red} from '@material-ui/core/colors';
 import Grid from '@material-ui/core/Grid';
 import Dispenser from "../../components/screen/Dispenser/Dispenser";
-import {getCookies} from "../../lib/RESTClient";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -77,30 +76,15 @@ export default function ListaDashboards({dashboards}: any) {
             <Grid container spacing={3}>
                 {rows.map((row) => (
                     <Grid item xs={3} key={row.id}>
-                        <Card className={classes.root}>
-                            <CardHeader
-                                avatar={
-                                    <Avatar aria-label="recipe" className={classes.avatar}>
-                                        {row.dispositivoId}
-                                    </Avatar>
-                                }
-                                title="Dispenser IoT"
-                                subheader={String(row.dataHora)}
-                            />
-                            <Dispenser nivel={row.nivel}></Dispenser>
-                            <CardContent>
-                                <Typography variant="body2" color="textSecondary" component="p" align="center">
-                                    Normal
-                                </Typography>
-                            </CardContent>
-                            <CardActions disableSpacing>
-                                <CardContent>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        Entrada 1 - Constantino Nery
-                                    </Typography>
-                                </CardContent>
-                            </CardActions>
-                        </Card>
+                        <Dispenser
+                            id={row.dispositivoId}
+                            dataHora={row.dataHora}
+                            dispositivo={row.dispositivo.dispositivo}
+                            nivel={row.nivel}
+                            wifi={row.wifi}
+                            voltagem={row.voltagem}
+                            localidade={row.dispositivo.localidade}
+                        ></Dispenser>
                     </Grid>
                 ))}
             </Grid>
@@ -112,6 +96,10 @@ ListaDashboards.getInitialProps = async (ctx: NextPageContext) => {
     let url = !process.env.BASE_URL ? '/api/dashboards' : `${process.env.BASE_URL}/api/dashboards`;
     const resp = await fetch(url);
     const res = await resp.json();
+
+
+    console.log(`Dashboard:\n${JSON.stringify(res)}`);
+
     const json: Dashboard[] = res.dashboards;
     return {
         dashboards: json

@@ -1,3 +1,5 @@
+import {Dispositivo} from "./Dispositivo";
+
 export interface Dashboard {
     id?: string;
     dataHora?: Date;
@@ -5,4 +7,5 @@ export interface Dashboard {
     voltagem: Number;
     nivel: Number;
     dispositivoId: Number;
+    dispositivo: Dispositivo;
 }
